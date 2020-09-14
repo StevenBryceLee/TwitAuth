@@ -31,7 +31,7 @@ def insert_example_users():
     User(id=3, name='joe'),
     User(id=4, name='bob'),
     User(id=5, name='bill')]
-    tweets = [Tweet(id=1, text='hello'), Tweet(id=2, text=' world')] 
+    tweets = [Tweet(id=1, text='hello', user_id=1), Tweet(id=2, text=' world', user_id=2)] 
     # Adds to database
     for user in users:
         DB.session.add(user)
