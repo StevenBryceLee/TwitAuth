@@ -17,11 +17,9 @@ def create_app():
         DB.drop_all()
         DB.create_all()
         insert_example_users()
-        
-        users = User.query.all()
+
+        # users = User.query.all()
         #Rendering template that we created passing home to template
         return render_template('base.html', title='Home', users=User.query.all())
-    
-
     
     return app
