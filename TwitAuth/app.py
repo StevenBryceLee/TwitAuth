@@ -16,8 +16,8 @@ def create_app():
     
     @app.route('/')
     def root():
-        DB.drop_all()
-        DB.create_all()
+        # DB.drop_all()
+        # DB.create_all()
         insert_example_user()
         # insert_fake_users()
         return render_template('base.html', title='Home', users=User.query.all())

@@ -21,7 +21,6 @@ BEARER_TOKEN = os.getenv("BEARER_TOKEN")
 BASILICA_KEY = os.getenv("BASILICA_KEY")
 
 b = basilica.Connection(BASILICA_KEY)
-user = 'jackblack'
 
 # Grants authorization
 TWITTER_AUTH = tweepy.OAuthHandler(API_KEY, API_SECRET_KEY)
@@ -34,11 +33,7 @@ tweets = twitter_user.timeline(count = 5, exclude_replies=True,
                                     include_rts=False,
                                     tweet_mode = 'extended',)
 tweet_text = tweets[0].full_text
-# print(tweet_text)
 embedding = b.embed_sentence(tweet_text, model = 'twitter')
-
-# print(embedding[0])
-# exit()
 
 def add_or_update_user(username):
     twitter_user = TWITTER.get_user(username)
